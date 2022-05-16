@@ -1,22 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import menuList from '../mockData/menu';
 
 
-const MainNavigation = (props) => {
-    const { menuList } = props;
-
+const MainNavigation = () => {
     return (
-        <div>
-            <ul className='main-nav'>
-                {
-                    menuList.map((el , i) => {
-                        const css = i%2 === 0 ? 'text-red' : 'text-green';
-                        return (
-                            <li key={`main_nav${i}`} className={css}>{el.text}</li>
-                        );
-                    })
-                }
-            </ul>
-        </div>
+        <ul className='main-nav'>
+            {
+                menuList.map((el , i) => {
+                    const w = `${100 / menuList.length}%`;
+
+                    return (
+                        <li key={`main_nav${i}`} style={{width: w}} className='main-nav-item'>
+                            <Link
+                                to={el.src}>
+                                {el.name}
+                            </Link>
+                        </li>
+                    );
+                })
+            }
+        </ul>
     );
 };
 

@@ -1,17 +1,19 @@
 import React from 'react';
-import Logotype from './Logotype';
+
 import MainNavigation from './MainNavigation';
 
 
 const Header = () => {
-    const LOGO_TXT = 'logo123';
-    const menuList: string[] = ['item1', 'item2', 'item3', 'item4'];
-
     return (
-        <React.Fragment>
-            <Logotype logoWord={LOGO_TXT}/>
-            <MainNavigation menuList={menuList}/>
-        </React.Fragment>
+        <div className='header'>
+            <div className='logo'>
+                <img src='https://via.placeholder.com/200x200' alt='' />
+            </div>
+            <MainNavigation/>
+            <div className='auth'>
+                <img src='https://via.placeholder.com/200x200' alt='' />
+            </div>
+        </div>
     );
 };
 

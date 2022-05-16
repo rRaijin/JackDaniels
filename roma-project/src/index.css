@@ -12,10 +12,76 @@ code {
     monospace;
 }
 
-.text-red {
-    color: red;
+footer {
+    background-color: rgb(34, 32, 32);
 }
 
-.text-green {
-    color: green;
+footer > p {
+    color:white;
+}
+
+p {
+    margin: 0;
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    background: rgb(253, 253, 253);
+}
+
+
+/* layout css */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: rgb(199, 194, 194);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(87, 80, 80);
+    color: white;
+    height: 40px;
+    overflow: hidden;
+}
+
+.logo, .auth {
+    width: 10%;
+}
+
+.logo > img, .auth > img {
+    width: 100%;
+}
+
+/* main navigation css */
+.main-nav {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+    list-style: none;
+    align-items: center;
+}
+
+.main-nav-item {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.main-nav-item:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+.main-nav-item > a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
 }
