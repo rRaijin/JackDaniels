@@ -85,3 +85,6 @@ main {
     font-weight: bold;
     text-decoration: none;
 }
+.email-id {
+    background-color:rgba(0, 0, 0, 0.1);
+}
