@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 
 const PreloadedList = (props) => {
@@ -15,8 +16,9 @@ const PreloadedList = (props) => {
                                     list.map((item, index) => {
                                         return (
                                             <div key={`item${index}`} className={`sculpture-item${index+1}`}>
-                                                <span className='email-id'>{`${item.id+')'} ${item.email}`}</span>
-                                                <h3>{item.body}</h3>
+                                                <span className='email-id'>{`${item.id+')'} ${item.title}`}</span>
+                                                <h3>{item.description}</h3>
+                                                <p>Created: {moment(item.createdAt).format('lll')}</p>
                                                 <br/>
                                             </div>
                                         );

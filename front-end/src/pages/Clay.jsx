@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import fetch from 'cross-fetch';
+
+import clayService from '../services/clay.service';
 import PreloadedList from '../components/lists/PreloadedList';
 
 
@@ -12,7 +13,7 @@ const Clay = () => {
 
     const btnText = dataFetched ? 'RESET' : 'GET DATA';
 
-    const handleOnClick = useCallback(() => {
+    const handleOnClick = useCallback(async () => {
         if (dataFetched) {
             setSculptures([]);
             setDataFetched(false);
@@ -20,15 +21,16 @@ const Clay = () => {
             setDataFetched(true);
             setStupidDefence(true);
             setTimeout(() => {
-                fetch('http://jsonplaceholder.typicode.com/comments?postId=1')
-                    .then((res) => {
-                        if (res.status >= 400) {
-                            console.log('Error');
-                            setErrorMsg('Server error!');
-                        } else return res.json();
-                    })
+                // fetch('http://jsonplaceholder.typicode.com/comments?postId=1')
+                clayService.getAll()
+                // .then((res) => {
+                //     if (res.status >= 400) {
+                //         console.log('Error');
+                //         setErrorMsg('Server error!');
+                //     } else return res.json();
+                // })
                     .then(res => {
-                        setSculptures(res);
+                        setSculptures(res.data);
                         setDataLoaded(true);
                         setStupidDefence(false);
                     })
