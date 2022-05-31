@@ -21,7 +21,8 @@ exports.up = function(db) {
         description: 'string',
         pictureFolder: 'string',
         pictureName: 'string',
-        // createdAt
+        createdAt: { type: 'timestamp' },
+        updatedAt: { type: 'timestamp' }
     }, () => {
         console.log('TABLE CLAYS CREATED SUCCESSFULLY!');
     });

@@ -24,7 +24,6 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-    console.log('asd')
     return Clay.findAll()
       .then(data => {
             res.send(data);

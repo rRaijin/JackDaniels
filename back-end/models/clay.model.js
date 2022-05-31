@@ -1,13 +1,16 @@
 module.exports = (sequelize, Sequelize) => {
-    const Clay = sequelize.define("clay", {
-        title: {
+    const Clay = sequelize.define("clays", {
+        name: {
             type: Sequelize.STRING
         },
         description: {
             type: Sequelize.STRING
         },
-        published: {
-            type: Sequelize.BOOLEAN
+        pictureFolder: {
+            type: Sequelize.STRING
+        },
+        pictureName : {
+            type: Sequelize.STRING
         }
     });
     return Clay;

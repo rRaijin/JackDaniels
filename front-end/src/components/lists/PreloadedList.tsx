@@ -16,7 +16,8 @@ const PreloadedList = (props) => {
                                     list.map((item, index) => {
                                         return (
                                             <div key={`item${index}`} className={`sculpture-item${index+1}`}>
-                                                <span className='email-id'>{`${item.id+')'} ${item.title}`}</span>
+                                                <img src={`/pictures/${item.pictureFolder}/${item.pictureName}`} alt={item.name} />
+                                                <span className='email-id'>{`${item.id+')'} ${item.name}`}</span>
                                                 <h3>{item.description}</h3>
                                                 <p>Created: {moment(item.createdAt).format('lll')}</p>
                                                 <br/>
