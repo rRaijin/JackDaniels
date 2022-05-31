@@ -39,6 +39,8 @@ const Clay = () => {
         }
     }, [dataFetched]);
 
+    console.log('OK');
+
     return (
         <div className=''>
             <div>
