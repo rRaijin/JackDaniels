@@ -18,11 +18,12 @@ exports.up = function(db) {
     db.createTable('clays', {
         id: { type: 'int', primaryKey: true, autoIncrement: true },
         name: 'string',
+        slug: 'string',
         description: 'string',
         pictureFolder: 'string',
         pictureName: 'string',
-        createdAt: { type: 'timestamp' },
-        updatedAt: { type: 'timestamp' }
+        createdAt: 'string',
+        updatedAt: 'string'
     }, () => {
         console.log('TABLE CLAYS CREATED SUCCESSFULLY!');
     });

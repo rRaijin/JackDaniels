@@ -1,16 +1,34 @@
 {
-    "compilerOptions": {
-          "target": "es5",
-          "suppressImplicitAnyIndexErrors": true,
-          "strictNullChecks": false,
-          "lib": [
-              "es5", "es2015.core", "dom"
-          ],
-          "module": "commonjs",
-          "moduleResolution": "node",
-          "outDir": "dist"
-      },
-      "include": [
-          "js/**/*"
-      ]
+  "compilerOptions": {
+    "target": "es5",
+    "suppressImplicitAnyIndexErrors": true,
+    "strictNullChecks": false,
+    "lib": [
+      "es5",
+      "es2015.core",
+      "dom"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "src"
+  ]
 }

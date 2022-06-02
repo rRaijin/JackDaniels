@@ -2,8 +2,18 @@ import React from 'react';
 import fetch from 'cross-fetch';
 
 
-class Painting extends React.Component {
-    constructor(props) {
+interface IPaintingProps {
+
+}
+
+interface IPaintingState {
+    loaded: boolean;
+    pictures: any[];
+}
+
+
+class Painting extends React.Component<IPaintingProps, IPaintingState> {
+    constructor(props: IPaintingProps) {
         super(props);
 
         this.state = {

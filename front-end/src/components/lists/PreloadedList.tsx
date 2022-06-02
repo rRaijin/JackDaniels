@@ -2,7 +2,14 @@ import React from 'react';
 import moment from 'moment';
 
 
-const PreloadedList = (props) => {
+interface IPreloadedListProps {
+    dataFetched: boolean;
+    errorMsg: string;
+    dataLoaded: boolean;
+    list: any[]
+}
+
+const PreloadedList = (props: IPreloadedListProps) => {
     const { dataFetched, errorMsg, dataLoaded, list } = props;
 
     return (

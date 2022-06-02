@@ -17,12 +17,15 @@ exports.setup = function(options, seedLink) {
 exports.up = function(db) {
     db.insert(
         'clays',
-        ['name', 'description', 'pictureFolder', 'pictureName'],
+        ['name', 'slug', 'description', 'pictureFolder', 'pictureName', 'createdAt', 'updatedAt'],
         [
             'Neptun',
+            'neptun',
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum officiis recusandae culpa provident fuga quaerat aliquid error aspernatur. Eaque ratione incidunt assumenda porro labore dolorem fuga libero aut repudiandae quae.',
             'clays',
-            'neptun.png'
+            'neptun.png',
+            new Date().getTime(),
+      new Date().getTime()
         ]
     );
     

@@ -6,19 +6,19 @@ class ClayService {
         return http.get('/clays');
     }
 
-    get(id) {
+    get(id: any) {
         return http.get(`/clays/${id}`);
     }
 
-    create(data) {
+    create(data: any) {
         return http.post('/clays', data);
     }
 
-    update(id, data) {
+    update(id: any, data: any) {
         return http.put(`/clays/${id}`, data);
     }
 
-    delete(id) {
+    delete(id: any) {
         return http.delete(`/clays/${id}`);
     }
 
@@ -26,7 +26,7 @@ class ClayService {
         return http.delete(`/clays`);
     }
 
-    findByTitle(title) {
+    findByTitle(title: any) {
         return http.get(`/clays?title=${title}`);
     }
 }
