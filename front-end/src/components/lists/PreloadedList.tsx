@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import Picture from '../Picture';
 
 
 interface IPreloadedListProps {
@@ -17,18 +18,28 @@ const PreloadedList = (props: IPreloadedListProps) => {
             {
                 dataFetched ?
                     errorMsg === '' ?
-                        <div className='sculptures-list'>
+                        <div className='catalog'>
                             {
                                 dataLoaded ?
                                     list.map((item, index) => {
+                                        const shortDesc = '';
                                         return (
-                                            <div key={`item${index}`} className={`sculpture-item${index+1}`}>
-                                                <img src={`/pictures/${item.pictureFolder}/${item.pictureName}`} alt={item.name} />
-                                                <span className='email-id'>{`${item.id+')'} ${item.name}`}</span>
+                                            <React.Fragment>
+                                            <div key={`${item.hasOwnProperty('name') ? item.name : 'item'}-${index}`} className='catalog-item'>
+                                                <Picture item={item}/>
+                                                <h3 className=''>{item.name}</h3>
                                                 <h3>{item.description}</h3>
-                                                <p>Created: {moment(item.createdAt).format('lll')}</p>
+                                                <p>Created: {moment(Number(item.createdAt)).format('lll')}</p>
                                                 <br/>
                                             </div>
+                                            <div key={`${item.hasOwnProperty('name') ? item.name : 'item'}-${index}`} className='catalog-item'>
+                                                <Picture item={item}/>
+                                                <h3 className=''>{item.name}</h3>
+                                                <p>{item.description}</p>
+                                                <p>Created: {moment(Number(item.createdAt)).format('lll')}</p>
+                                                <br/>
+                                            </div>
+                                            </React.Fragment>
                                         );
                                     }) :
                                     <div>Loading...</div>
