@@ -1,5 +1,4 @@
 import React from 'react';
-import fetch from 'cross-fetch';
 
 
 interface IPaintingProps {
@@ -24,23 +23,6 @@ class Painting extends React.Component<IPaintingProps, IPaintingState> {
 
     componentDidMount() {
         console.log('MOUNTED');
-        setTimeout(() => {
-            fetch('http://jsonplaceholder.typicode.com/posts')
-                .then((res) => {
-                    if (res.status >= 400) {
-                        throw new Error('Bad response from server');
-                    }
-                    return res.json();
-                })
-                .then((data) => {
-                    console.log('data: ', data);
-                    this.setState({
-                        loaded: true,
-                        pictures: data
-                    });
-                })
-                .catch((err) => console.log('Error: ', err));
-        }, 1000);
     }
 
     componentWillUnmount() {

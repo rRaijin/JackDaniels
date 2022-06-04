@@ -29,7 +29,7 @@ const App = () => {
                     <Route path='/ikibana' element={<Icibana />} />
                 </Routes>
                 <footer>
-                    <p className='mt-5'>FOOTER</p>
+                    <p className='my-5 text-center uppercase font-bold text-pink'>FOOTER</p>
                 </footer>
             </Router>
         </div>

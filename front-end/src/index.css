@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -40,7 +39,6 @@ footer > p {
 .container {
     width: 1200px;
     margin: 0 auto;
-    background-color: rgb(199, 194, 194);
 }
 
 .header {
@@ -89,33 +87,4 @@ footer > p {
     color: white;
     font-weight: bold;
     text-decoration: none;
-}
-
-
-
-.w-50p {
-    width: 50%;
-}
-
-.w-full {
-    width: 100%;
-}
-
-
-
-.catalog {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.catalog-item {
-    width: 50%;
-    height: auto;
-    padding: 10px;
-    background-color: azure;
-}
-
-
-.email-id {
-    background-color:rgba(0, 0, 0, 0.1);
 }

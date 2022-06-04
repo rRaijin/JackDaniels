@@ -29,7 +29,7 @@ const Clay = () => {
     }, [dataFetched]);
 
     return (
-        <div className='mt-5'>
+        <div className=''>
             <PreloadedList
                 dataFetched={dataFetched}
                 errorMsg={errorMsg}

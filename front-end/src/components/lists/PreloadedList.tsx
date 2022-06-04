@@ -1,9 +1,10 @@
 import React from 'react';
-import moment from 'moment';
-import Picture from '../Picture';
+
+import PreviewCard from '../cards/PreviewCard';
 
 
 interface IPreloadedListProps {
+    className?: string;
     dataFetched: boolean;
     errorMsg: string;
     dataLoaded: boolean;
@@ -11,37 +12,28 @@ interface IPreloadedListProps {
 }
 
 const PreloadedList = (props: IPreloadedListProps) => {
-    const { dataFetched, errorMsg, dataLoaded, list } = props;
+    const { dataFetched, errorMsg, dataLoaded, list, className } = props;
 
     return (
-        <div>
+        <div className={className}>
             {
                 dataFetched ?
                     errorMsg === '' ?
-                        <div className='catalog'>
+                        <div className='flex flex-wrap mb-4'>
                             {
                                 dataLoaded ?
-                                    list.map((item, index) => {
-                                        const shortDesc = '';
-                                        return (
-                                            <React.Fragment>
-                                            <div key={`${item.hasOwnProperty('name') ? item.name : 'item'}-${index}`} className='catalog-item'>
-                                                <Picture item={item}/>
-                                                <h3 className=''>{item.name}</h3>
-                                                <h3>{item.description}</h3>
-                                                <p>Created: {moment(Number(item.createdAt)).format('lll')}</p>
-                                                <br/>
-                                            </div>
-                                            <div key={`${item.hasOwnProperty('name') ? item.name : 'item'}-${index}`} className='catalog-item'>
-                                                <Picture item={item}/>
-                                                <h3 className=''>{item.name}</h3>
-                                                <p>{item.description}</p>
-                                                <p>Created: {moment(Number(item.createdAt)).format('lll')}</p>
-                                                <br/>
-                                            </div>
-                                            </React.Fragment>
-                                        );
-                                    }) :
+                                    list.map((item, index) =>
+                                        <React.Fragment>
+                                            <PreviewCard
+                                                className='flex w-1/2'
+                                                item={item}
+                                                index={index}/>
+                                            <PreviewCard
+                                                className='flex w-1/2'
+                                                item={item}
+                                                index={index+1}/>
+                                        </React.Fragment>
+                                    ) :
                                     <div>Loading...</div>
                             }
                         </div> :

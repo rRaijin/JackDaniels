@@ -3,14 +3,15 @@ import React from 'react';
 
 interface IPictureProps {
     item: any;
+    className?: string;
 }
 
 
 const Picture = (props: IPictureProps) => {
-    const { item } = props;
+    const { item, className } = props;
 
     return (
-        <React.Fragment>
+        <div className={className}>
             {
                 item ?
                 <img
@@ -19,7 +20,7 @@ const Picture = (props: IPictureProps) => {
                     alt={item.pictureName}/> :
                 <></>
             }
-        </React.Fragment>
+        </div>
     );
 };
 
