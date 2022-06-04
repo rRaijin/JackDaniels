@@ -10,10 +10,16 @@ const Picture = (props: IPictureProps) => {
     const { item } = props;
 
     return (
-        <img
-            src={`/pictures/${item.pictureFolder}/${item.pictureName}`}
-            className='w-full'
-            alt={item.pictureName}/>
+        <React.Fragment>
+            {
+                item ?
+                <img
+                    src={`/pictures/${item.pictureFolder}/${item.pictureName}`}
+                    className='w-full'
+                    alt={item.pictureName}/> :
+                <></>
+            }
+        </React.Fragment>
     );
 };
 

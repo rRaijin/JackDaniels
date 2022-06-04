@@ -29,7 +29,7 @@ const App = () => {
                     <Route path='/ikibana' element={<Icibana />} />
                 </Routes>
                 <footer>
-                    <p style={{textAlign: 'center', padding: '20px'}}>FOOTER</p>
+                    <p className='mt-5'>FOOTER</p>
                 </footer>
             </Router>
         </div>
