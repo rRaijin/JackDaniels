@@ -4,7 +4,9 @@ const colors = {
     'steel': '#737373',
     'steel-light': '#919191',
     'steel-lighter': '#a6a6a6',
-    'steel-lightest': '#d9d9d9'
+    'steel-lightest': '#d9d9d9',
+
+    'olive': '#74992e'
 };
 
 
