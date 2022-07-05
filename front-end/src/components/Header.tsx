@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MainNavigation from './MainNavigation';
+import AvatarComponent from './Avatar'
 
 
 const Header = () => {
@@ -10,10 +11,8 @@ const Header = () => {
                 <img src='https://via.placeholder.com/200x200' alt='' />
             </div>
             <MainNavigation/>
-            <div className='auth'>
-                <img src='https://via.placeholder.com/200x200' alt='' />
-            </div>
-        </div>
+            <AvatarComponent user={null}/>
+        </div> 
     );
 };
 
