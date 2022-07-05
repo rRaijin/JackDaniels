@@ -6,6 +6,7 @@ import MosaicList from '../components/lists/Mosaic';
 import PreloadedList from '../components/lists/PreloadedList';
 import Tabulation, { ITabulationProps } from '../components/Tabulation';
 import ClayTabItem from '../components/ClayComponents/clayTabItem';
+import ClayEditor from '../components/ClayComponents/clayEditor';
 
 
 const TEXT_COLOR = 'text-steel-darker bg-steel-lightest font-bold uppercase text-center border-2 border-b-0';
@@ -77,11 +78,13 @@ const Clay = () => {
                 list={tempTabulationListData.list}
                 className={tempTabulationListData.className}/>
 
-            <PreloadedList
+            {/* <ClayEditor /> */}
+
+            {/* <PreloadedList
                 dataFetched={dataFetched}
                 errorMsg={errorMsg}
                 dataLoaded={dataLoaded}
-                list={sculptures}/>
+                list={sculptures}/> */}
         </div>
     );
 };
