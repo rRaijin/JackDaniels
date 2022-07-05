@@ -48,7 +48,7 @@ const PreviewCard = (props: IPreviewCardProps) => {
                     </div>
                     <div className="flex justify-end">
                         <div className="w-2/3 flex items-center justify-end pr-4">
-                            <AvatarComponent />
+                            <AvatarComponent user={null}/>
                             <p className="ml-2">Azovskiy Aiwazovskiy</p>
                         </div>
                     </div>
