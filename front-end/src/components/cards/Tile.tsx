@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { TileType } from '../../constants/enums';
 
@@ -9,9 +9,7 @@ interface ITileProps {
 }
 
 
-const Tile = (props: ITileProps) => {
-    const { tileType, className } = props;
-    
+const Tile: FC<ITileProps> = ({ tileType, className }) => {
     let block;
     switch (tileType) {
         case TileType.PICT:

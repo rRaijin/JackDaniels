@@ -1,5 +1,5 @@
+import React, { FC } from "react";
 import moment from "moment";
-import React from "react";
 import AvatarComponent from "../Avatar";
 
 import Picture from "../Picture";
@@ -19,11 +19,9 @@ interface IPreviewCardProps {
 }
 
 
-const PreviewCard = (props: IPreviewCardProps) => {
-    const { className, item, index } = props;
-
+const PreviewCard: FC<IPreviewCardProps> = ({ className, item, index }) => {
     let itemDate = new Date().getTime();
-    console.log('itemDate', itemDate);
+    // console.log('itemDate', itemDate);
 
     if (item && item.hasOwnProperty('createdAt') && typeof item.createdAt === 'string') {
         itemDate = Number(item.createdAt);

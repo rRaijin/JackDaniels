@@ -33,6 +33,7 @@ router.delete('/:id', async (req: Request, res: Response) => {
 
 router.post('/', async (req: Request, res: Response) => {
     const payload: CreateClayDTO = req.body;
+    console.log('payload: ', payload);
     const result = await controller.create(payload);
 
     return res.status(200).send(result);
