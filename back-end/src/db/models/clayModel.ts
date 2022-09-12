@@ -1,4 +1,4 @@
-import { Model, DataTypes, Optional } from 'sequelize';
+import { Model, DataTypes, Optional, literal } from 'sequelize';
 
 import sequelizeConnection from '../config';
 
@@ -55,14 +55,8 @@ Clay.init({
     pictureName: {
         type: DataTypes.STRING
     },
-    createdAt: {
-        type: DataTypes.STRING
-    },
-    updatedAt: {
-        type: DataTypes.STRING
-    }
 }, {
-    timestamps: false,
+    timestamps: true,
     sequelize: sequelizeConnection,
     paranoid: true
 });

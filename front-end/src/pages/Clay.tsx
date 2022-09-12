@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import { ClayStaff, TileType } from '../constants/enums';
-import MosaicList from '../components/lists/Mosaic';
-import ItemsList from '../components/lists/ItemsList';
-import Tabulation, { ITabulationProps } from '../components/Tabulation';
-import ClayTabItem from '../components/ClayComponents/clayTabItem';
 import { clayAPI } from '../services/ClayService';
+import { ClayStaff, TileType } from '../constants/enums';
 import { IClay } from '../models/IClay';
+import ClayTabItem from '../components/ClayComponents/clayTabItem';
+import ItemsList from '../components/lists/ItemsList';
+import MosaicList from '../components/lists/Mosaic';
+import Tabulation, { ITabulationProps } from '../components/Tabulation';
 
 
 const TEXT_COLOR = 'text-steel-darker bg-steel-lightest font-bold uppercase text-center border-2 border-b-0';
@@ -40,9 +40,9 @@ const Clay = () => {
 
     const handleCreate = async () => {
         await createClay({
-            name: 'Test Clay 1',
-            slug: 'test-clay-1',
-            description: 'Test Clay Description',
+            name: 'Test Clay 2',
+            slug: 'test-clay-2',
+            description: 'Test Clay Description 2',
             pictureFolder: 'clays',
             pictureName: ''
         } as IClay);

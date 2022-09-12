@@ -20,13 +20,6 @@ interface IPreviewCardProps {
 
 
 const PreviewCard: FC<IPreviewCardProps> = ({ className, item, index }) => {
-    let itemDate = new Date().getTime();
-    // console.log('itemDate', itemDate);
-
-    if (item && item.hasOwnProperty('createdAt') && typeof item.createdAt === 'string') {
-        itemDate = Number(item.createdAt);
-    }
-
     const getMarginPos = index % 2 !== 0 ? 'ml-2' : 'mr-2';
 
     return (
@@ -51,7 +44,7 @@ const PreviewCard: FC<IPreviewCardProps> = ({ className, item, index }) => {
                         </div>
                     </div>
                     <div className="flex">
-                        <p>Created: {moment(itemDate).format('lll')}</p>
+                        <p>Created: {moment(item.createdAt).format('lll')}</p>
                     </div>
                 </div>
             </div>

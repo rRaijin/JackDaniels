@@ -1,5 +1,7 @@
 'use strict';
 
+const moment = require('moment');
+
 var dbm;
 var type;
 var seed;
@@ -17,15 +19,16 @@ exports.setup = function(options, seedLink) {
 exports.up = function(db) {
     db.insert(
         'clays',
-        ['name', 'slug', 'description', 'pictureFolder', 'pictureName', 'createdAt', 'updatedAt'],
+        ['name', 'slug', 'description', 'pictureFolder', 'pictureName', 'createdAt', 'updatedAt', 'deletedAt'],
         [
             'Neptun',
             'neptun',
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum officiis recusandae culpa provident fuga quaerat aliquid error aspernatur. Eaque ratione incidunt assumenda porro labore dolorem fuga libero aut repudiandae quae.',
             'clays',
             'neptun.png',
-            new Date().getTime(),
-      new Date().getTime()
+            moment().format('YYYY-MM-DD hh:mm:ss'),
+            moment().format('YYYY-MM-DD hh:mm:ss'),
+            null
         ]
     );
     
